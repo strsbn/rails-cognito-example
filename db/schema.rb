@@ -12,8 +12,8 @@
 
 ActiveRecord::Schema.define(version: 2019_07_24_144814) do
 
-  create_table "cognito_sessions", force: :cascade do |t|
-    t.integer "user_id", null: false
+  create_table "cognito_sessions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "user_id", null: false
     t.integer "expire_time", null: false
     t.integer "issued_time", null: false
     t.string "audience", null: false
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2019_07_24_144814) do
     t.index ["user_id"], name: "index_cognito_sessions_on_user_id"
   end
 
-  create_table "sessions", force: :cascade do |t|
+  create_table "sessions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "session_id", null: false
     t.text "data"
     t.datetime "created_at", null: false
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2019_07_24_144814) do
     t.index ["updated_at"], name: "index_sessions_on_updated_at"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "subscriber", null: false
     t.string "email", null: false
     t.datetime "created_at", null: false
