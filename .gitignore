@@ -29,9 +29,3 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
-
-# IDE Setting
-.idea
-
-# ENV file
-.env
