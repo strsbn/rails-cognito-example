@@ -6,6 +6,7 @@ ruby '2.6.3'
 gem 'activerecord-session_store', '~> 2.0.0'
 gem 'excon', '~> 0.71.0'
 gem 'json-jwt', '~> 1.11.0'
+gem "mysql2", "~> 0.5"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4'
@@ -41,15 +42,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # CVE-2019-5477
 gem 'nokogiri', '>= 1.10.4'
 
-group :production do
-  gem 'pg', '1.1.4'
-end
-
 group :development, :test do
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
-
   gem 'dotenv-rails', '~> 2.7.4'
+  gem 'rails-erd'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
